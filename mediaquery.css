@@ -1,0 +1,55 @@
+@media screen and (max-width: 1200px){
+
+    button{
+        width: 80px;
+        height: 85px;
+    }
+
+    #calculator{
+        height: 100vh;
+        width: 100vw;
+       }
+
+    #keys{
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+}
+
+@media screen and (max-width:400px) {
+    
+    button{
+        width: 70px;
+        height: 80px;
+      
+    }
+
+    #calculator{
+        height: 100vh;
+        width: 100vw;
+       }
+
+       #keys{
+        width: 150px;
+        /* flex-wrap: wrap; */
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    /* button{
+        height: 120px;
+        width: 80px;
+    } */
+    
+    #calculator{
+        max-width: 400px;
+    }
+
+    #keys{
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px ;
+    }
+}

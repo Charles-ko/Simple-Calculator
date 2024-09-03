@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #display {
+            width: 200px;
+            height: 50px;
+            font-size: 2em;
+            text-align: right;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">0</div>
+    <button class="button" onclick="appendNumber(1)">1</button>
+    <button class="button" onclick="appendNumber(2)">2</button>
+    <button class="button" onclick="appendNumber(3)">3</button>
+    <button class="button" onclick="setOperator('+')">+</button>
+    <button class="button" onclick="calculateResult()">=</button>
+
+    <script>
+        let display = document.getElementById('display');
+        let currentNumber = '';
+        let storedNumber = '';
+        let operator = '';
+
+        function appendNumber(number) {
+            currentNumber += number;
+            display.textContent = currentNumber;
+        }
+
+        function setOperator(op) {
+            if (currentNumber === '') return; // Prevents setting an operator without a number
+
+            operator = op;
+            storedNumber = currentNumber;
+            currentNumber = '';
+            display.textContent = ''; // Clear display for the next number
+        }
+
+        function calculateResult() {
+            if (storedNumber === '' || currentNumber === '' || operator === '') return;
+
+            let result;
+            let num1 = parseFloat(storedNumber);
+            let num2 = parseFloat(currentNumber);
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                // Add more operators like -, *, / as needed
+            }
+
+            display.textContent = result;
+            currentNumber = result.toString();
+            storedNumber = '';
+            operator = '';
+        }
+    </script>
+</body>
+</html>
