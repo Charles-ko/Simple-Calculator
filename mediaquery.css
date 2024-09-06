@@ -18,23 +18,30 @@
 }
 
 @media screen and (max-width:400px) {
+
+    #display{
+        font-size: 4rem;
+    }
     
     button{
-        width: 70px;
-        height: 80px;
-      
+        width: 50px;
+        height: 50px;
+        font-size: 2.5rem;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 10px;
     }
 
     #calculator{
-        height: 100vh;
-        width: 100vw;
+        height: 75vh;
+        width: 80vw;
+
        }
 
        #keys{
-        width: 150px;
+        width: 300px;
         /* flex-wrap: wrap; */
     }
-
+    
 }
 
 @media screen and (max-width:600px) {
