@@ -73,14 +73,7 @@ function clearDisplay(){
 
 function calculate(){
     try{
-        switch ('+') {
-            case value:
-                
-                break;
-        
-            default:
-                break;
-        }
+        display.value = eval(display.value); 
     }
     
     catch(error){
